@@ -1,0 +1,119 @@
+<template>
+    <div>
+        <b-row>
+            <b-col offset-lg="4" col lg="4">
+                <h1>Register</h1>
+
+                <b-form @submit="register">
+                    <b-form-row>
+
+                        <b-col cols="12">
+                            <b-form-group
+                            id="name"
+                            label="Name"
+                            label-for="name"
+                            >
+                                <b-form-input
+                                id="name"
+                                v-model="name"
+                                type="text"
+                                required
+                                ></b-form-input>
+                            </b-form-group>
+                        </b-col>
+
+                        <b-col cols="12">
+                            <b-form-group
+                            id="email"
+                            label="E-mail Address"
+                            label-for="email"
+                            >
+                                <b-form-input
+                                id="email"
+                                v-model="email"
+                                type="email"
+                                required
+                                ></b-form-input>
+                            </b-form-group>
+                        </b-col>
+
+                        <b-col cols="12">
+                            <b-form-group
+                            id="password"
+                            label="Password"
+                            label-for="password"
+                            >
+                                <b-form-input
+                                id="password"
+                                v-model="password"
+                                type="password"
+                                required
+                                ></b-form-input>
+                            </b-form-group>
+                        </b-col>
+
+                        <b-col cols="12">
+                            <b-form-group
+                            id="confirm-password"
+                            label="Confirm Password"
+                            label-for="confirm-password"
+                            >
+                                <b-form-input
+                                id="confirm-password"
+                                v-model="confirmPassword"
+                                type="password"
+                                required
+                                ></b-form-input>
+                            </b-form-group>
+                        </b-col>
+
+                        <b-button type="submit" variant="primary">Register</b-button>
+
+                    </b-form-row>
+                </b-form>
+            </b-col>
+        </b-row>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'register',
+        components: {},
+        data() {
+            return {
+                name: '',
+                email: '',
+                password: '',
+                confirmPassword: ''
+            }
+        },
+        methods: {
+            register(evt) {
+                evt.preventDefault();
+                let app = this;
+                axios.post('/api/register', {
+                    name: app.name,
+                    email: app.email,
+                    password: app.password,
+                    confirmPassword: app.confirmPassword
+                })
+                .then(function(response) {
+                    console.log(response.data);
+                    app.name = response.data.name;
+                    app.email = response.data.email;
+                    localStorage.setItem('token', response.data.token);
+                    // Redirect to this url
+                    app.$router.push('/dashboard');
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    
+</style>
