@@ -13,7 +13,7 @@
 
                 <b-nav-item-dropdown text="Lecturers" left>
                     <b-dropdown-item :to="{ name: 'lecturersIndex' }">View All</b-dropdown-item>
-                    <b-dropdown-item to="/">Create</b-dropdown-item>
+                    <b-dropdown-item :to="{ name: 'createLecturer' }">Create</b-dropdown-item>
                 </b-nav-item-dropdown>
 
                 <b-nav-item-dropdown text="Enrolments" left>

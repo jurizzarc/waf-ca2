@@ -15,8 +15,8 @@
                     <b-td>{{ lecturer.email }}</b-td>
                     <b-td>
                         <router-link :to="`/dashboard/lecturers/${lecturer.id}`">View</router-link>
-                        <router-link to="/">Edit</router-link>
-                        <b-button variant="danger">Delete</b-button>
+                        <router-link :to="`/dashboard/lecturers/edit/${lecturer.id}`">Edit</router-link>
+                        <b-button variant="danger" @click="deleteLecturer(lecturer.id)">Delete</b-button>
                     </b-td>
                 </b-tr>
             </b-table-simple>
@@ -55,6 +55,19 @@
                 .catch(function (error) {
                     console.log(error);
                 })
+            },
+            deleteLecturer(id) {
+                let app = this;
+                let token = localStorage.getItem('token');
+                axios.delete(`/api/lecturers/${id}`, {
+                    headers: { Authorization: "Bearer " + token }
+                })
+                .then(function (response) {
+                    console.log(response);
+                    // Find index of object to be deleted
+                    let i = this.lecturers.map(item => item.id).indexOf(id);
+                    this.lecturers.splice(i, 1);
+                });
             }
         }
     }
