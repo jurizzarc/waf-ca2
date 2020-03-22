@@ -1,7 +1,7 @@
 <!-- PARENT COMPONENT -->
 <template>
     <div>
-        <Navbar/>
+        <Navbar v-if="!$route.meta.hideNavigation"/>
         <b-container>
             <router-view/>
         </b-container>

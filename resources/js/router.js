@@ -25,17 +25,20 @@ export default new Router({
       {
         path: '/',
         name: 'index',
-        component: Index
+        component: Index,
+        meta: { hideNavigation: true }
       },
       {
         path: '/login',
         name: 'login',
-        component: Login
+        component: Login,
+        meta: { hideNavigation: true }
       },
       {
         path: '/register',
         name: 'register',
-        component: Register
+        component: Register,
+        meta: { hideNavigation: true }
       },
       {
         path: '/dashboard',

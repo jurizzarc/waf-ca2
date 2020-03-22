@@ -64,9 +64,7 @@
                 })
                 .then(function (response) {
                     console.log(response);
-                    // Find index of object to be deleted
-                    let i = this.lecturers.map(item => item.id).indexOf(id);
-                    this.lecturers.splice(i, 1);
+                    app.getLecturers();
                 });
             }
         }

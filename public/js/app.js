@@ -2684,12 +2684,8 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer " + token
         }
       }).then(function (response) {
-        console.log(response); // Find index of object to be deleted
-
-        var i = this.courses.map(function (item) {
-          return item.id;
-        }).indexOf(id);
-        this.courses.splice(i, 1);
+        console.log(response);
+        app.getCourses();
       });
     }
   }
@@ -3128,12 +3124,8 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer " + token
         }
       }).then(function (response) {
-        console.log(response); // Find index of object to be deleted
-
-        var i = this.lecturers.map(function (item) {
-          return item.id;
-        }).indexOf(id);
-        this.lecturers.splice(i, 1);
+        console.log(response);
+        app.getLecturers();
       });
     }
   }
@@ -77170,7 +77162,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("Navbar"), _vm._v(" "), _c("b-container", [_c("router-view")], 1)],
+    [
+      !_vm.$route.meta.hideNavigation ? _c("Navbar") : _vm._e(),
+      _vm._v(" "),
+      _c("b-container", [_c("router-view")], 1)
+    ],
     1
   )
 }
@@ -94369,15 +94365,24 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
   routes: [{
     path: '/',
     name: 'index',
-    component: _views_Index__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: _views_Index__WEBPACK_IMPORTED_MODULE_2__["default"],
+    meta: {
+      hideNavigation: true
+    }
   }, {
     path: '/login',
     name: 'login',
-    component: _views_Login__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _views_Login__WEBPACK_IMPORTED_MODULE_3__["default"],
+    meta: {
+      hideNavigation: true
+    }
   }, {
     path: '/register',
     name: 'register',
-    component: _views_Register__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _views_Register__WEBPACK_IMPORTED_MODULE_4__["default"],
+    meta: {
+      hideNavigation: true
+    }
   }, {
     path: '/dashboard',
     name: 'dashboard',
