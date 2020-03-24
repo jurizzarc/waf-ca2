@@ -9,30 +9,30 @@
 
                         <b-col cols="12">
                             <b-form-group
-                            id="email"
-                            label="E-mail Address"
-                            label-for="email"
+                              id="email"
+                              label="E-mail Address"
+                              label-for="email"
                             >
                                 <b-form-input
-                                id="email"
-                                v-model="email"
-                                type="email"
-                                required
+                                  id="email"
+                                  v-model="email"
+                                  type="email"
+                                  required
                                 ></b-form-input>
                             </b-form-group>
                         </b-col>
 
                         <b-col cols="12">
                             <b-form-group
-                            id="password"
-                            label="Password"
-                            label-for="password"
+                              id="password"
+                              label="Password"
+                              label-for="password"
                             >
                                 <b-form-input
-                                id="password"
-                                v-model="password"
-                                type="password"
-                                required
+                                  id="password"
+                                  v-model="password"
+                                  type="password"
+                                  required
                                 ></b-form-input>
                             </b-form-group>
                         </b-col>

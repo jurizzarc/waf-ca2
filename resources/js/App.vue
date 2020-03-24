@@ -21,7 +21,5 @@
 </script>
 
 <style>
-    .row {
-        padding-top: 90px;
-    }
+    
 </style>
