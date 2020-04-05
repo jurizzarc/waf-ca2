@@ -1,78 +1,85 @@
 <template>
-    <div>
-        <b-row>
-            <b-col offset-lg="4" col lg="4">
-                <h1>Register</h1>
+    <div class="vertical-centre">
+        <b-container>
+            <b-row>
+                <b-col offset-lg="4" col lg="4">
+                    <div class="form-header">
+                        <h1>Register</h1>
+                        <p>Already have an account? <router-link :to="{name: 'login'}">Sign In</router-link></p> 
+                    </div>
 
-                <b-form @submit="register">
-                    <b-form-row>
+                    <b-form @submit="register">
+                        <b-form-row>
 
-                        <b-col cols="12">
-                            <b-form-group
-                            id="name"
-                            label="Name"
-                            label-for="name"
-                            >
-                                <b-form-input
+                            <b-col cols="12">
+                                <b-form-group
                                 id="name"
-                                v-model="name"
-                                type="text"
-                                required
-                                ></b-form-input>
-                            </b-form-group>
-                        </b-col>
+                                label="Name"
+                                label-for="name"
+                                >
+                                    <b-form-input
+                                    id="name"
+                                    v-model="name"
+                                    type="text"
+                                    required
+                                    ></b-form-input>
+                                </b-form-group>
+                            </b-col>
 
-                        <b-col cols="12">
-                            <b-form-group
-                            id="email"
-                            label="E-mail Address"
-                            label-for="email"
-                            >
-                                <b-form-input
+                            <b-col cols="12">
+                                <b-form-group
                                 id="email"
-                                v-model="email"
-                                type="email"
-                                required
-                                ></b-form-input>
-                            </b-form-group>
-                        </b-col>
+                                label="E-mail Address"
+                                label-for="email"
+                                >
+                                    <b-form-input
+                                    id="email"
+                                    v-model="email"
+                                    type="email"
+                                    required
+                                    ></b-form-input>
+                                </b-form-group>
+                            </b-col>
 
-                        <b-col cols="12">
-                            <b-form-group
-                            id="password"
-                            label="Password"
-                            label-for="password"
-                            >
-                                <b-form-input
+                            <b-col cols="12">
+                                <b-form-group
                                 id="password"
-                                v-model="password"
-                                type="password"
-                                required
-                                ></b-form-input>
-                            </b-form-group>
-                        </b-col>
+                                label="Password"
+                                label-for="password"
+                                >
+                                    <b-form-input
+                                    id="password"
+                                    v-model="password"
+                                    type="password"
+                                    required
+                                    ></b-form-input>
+                                </b-form-group>
+                            </b-col>
 
-                        <b-col cols="12">
-                            <b-form-group
-                            id="confirm-password"
-                            label="Confirm Password"
-                            label-for="confirm-password"
-                            >
-                                <b-form-input
+                            <b-col cols="12">
+                                <b-form-group
                                 id="confirm-password"
-                                v-model="confirmPassword"
-                                type="password"
-                                required
-                                ></b-form-input>
-                            </b-form-group>
-                        </b-col>
+                                label="Confirm Password"
+                                label-for="confirm-password"
+                                >
+                                    <b-form-input
+                                    id="confirm-password"
+                                    v-model="confirmPassword"
+                                    type="password"
+                                    required
+                                    ></b-form-input>
+                                </b-form-group>
+                            </b-col>
 
-                        <b-button type="submit" variant="primary">Register</b-button>
+                            <b-col>
+                                <b-button type="submit" variant="primary">Register</b-button>
+                            </b-col>
 
-                    </b-form-row>
-                </b-form>
-            </b-col>
-        </b-row>
+                        </b-form-row>
+                    </b-form>
+                </b-col>
+            </b-row>
+        </b-container>
     </div>
 </template>
 
@@ -115,5 +122,15 @@
 </script>
 
 <style scoped>
-    
+    p a {
+        font-weight: 500;
+    }
+
+    .form-header h1 {
+        margin-bottom: 5px;
+    }
+
+    button.btn {
+        padding: 10px 20px;
+    }   
 </style>

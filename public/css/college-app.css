@@ -8,6 +8,10 @@ html, body {
     font-family: 'Poppins', sans-serif;
 }
 
+p {
+    margin-bottom: 0px;
+}
+
 .vertical-centre {
     min-height: 100vh;
     display: flex;
@@ -19,12 +23,52 @@ a, .btn {
     transition: ease-in-out 0.3s;
 }
 
+a {
+    color: #2b376b;
+}
+
 a:hover {
     text-decoration: none;
+    color: #1b2550;
+}
+
+.bg-dark {
+    background-color: #161616!important;
+}
+
+.navbar {
+    padding: 0px 12px 0px 0px!important;
+    height: 60px!important;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding: 10px!important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff!important;
+}
+
+.navbar-dark .navbar-nav .nav-link:not(:last-child) {
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    width: 60px;
+    padding: 0px!important;
+    margin-right: 12px;
+}
+
+.navbar-brand .square-icon {
+    background-color: #2b376b;
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
 }
 
 .btn {
-    font-weight: 600;
+    font-weight: 500;
+    border-radius: 5px;
 }
 
 .btn-primary {
@@ -48,4 +92,45 @@ a:hover {
     color: #fff;
     background-color: #2b376b;
     border-color: #2b376b;
+}
+
+.form-header {
+    border-bottom: 1px solid #adadad;
+    padding-bottom: 20px;
+}
+
+form {
+    margin-top: 25px;
+}
+
+.form-control {
+    height: 40px;
+    padding: 10px;
+    font-size: 14px;
+    color: #161616;
+    border: 1px solid #adadad;
+    border-radius: 3px;
+    -webkit-transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.3s;
+    background-color: transparent;
+}
+
+.form-control:focus {
+    color: #161616;
+    border-color: #161616;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+form .btn {
+    margin-top: 15px;
 }

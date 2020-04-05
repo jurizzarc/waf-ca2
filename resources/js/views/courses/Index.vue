@@ -1,31 +1,33 @@
 <template>
-    <b-row>
-        <b-col offset-lg="1" col lg="10">
-            <h1>Courses</h1>
+    <b-container>
+        <b-row>
+            <b-col offset-lg="1" col lg="10">
+                <h1>Courses</h1>
 
-            <b-table-simple responsive>
-                <b-tr>
-                    <b-th>Title</b-th>
-                    <b-th>Code</b-th>
-                    <b-th>Points</b-th>
-                    <b-th>Level</b-th>
-                    <b-th>Actions</b-th>
-                </b-tr>
+                <b-table-simple responsive>
+                    <b-tr>
+                        <b-th>Title</b-th>
+                        <b-th>Code</b-th>
+                        <b-th>Points</b-th>
+                        <b-th>Level</b-th>
+                        <b-th>Actions</b-th>
+                    </b-tr>
 
-                <b-tr v-for="course in courses" :key="course.id">
-                    <b-td>{{ course.title }}</b-td>
-                    <b-td>{{ course.code }}</b-td>
-                    <b-td>{{ course.points }}</b-td>
-                    <b-td>{{ course.level }}</b-td>
-                    <b-td>
-                        <router-link :to="`/dashboard/courses/${course.id}`">View</router-link>
-                        <router-link :to="`/dashboard/courses/edit/${course.id}`">Edit</router-link>
-                        <b-button variant="danger" @click="deleteCourse(course.id)">Delete</b-button>
-                    </b-td>
-                </b-tr>
-            </b-table-simple>
-        </b-col>
-    </b-row>
+                    <b-tr v-for="course in courses" :key="course.id">
+                        <b-td>{{ course.title }}</b-td>
+                        <b-td>{{ course.code }}</b-td>
+                        <b-td>{{ course.points }}</b-td>
+                        <b-td>{{ course.level }}</b-td>
+                        <b-td>
+                            <router-link :to="`/dashboard/courses/${course.id}`">View</router-link>
+                            <router-link :to="`/dashboard/courses/edit/${course.id}`">Edit</router-link>
+                            <b-button variant="danger" @click="deleteCourse(course.id)">Delete</b-button>
+                        </b-td>
+                    </b-tr>
+                </b-table-simple>
+            </b-col>
+        </b-row>
+    </b-container>
 </template>
 
 <script>
@@ -74,7 +76,11 @@
     }
 </script>
 
-<style>
+<style scoped>
+    .container {
+        padding-top: 80px;
+    }
+
     td a:not(:last-child) {
         margin-right: 5px;
     }

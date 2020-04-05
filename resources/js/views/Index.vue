@@ -10,13 +10,13 @@
                     <b-row>
                         <b-col cols="12">
                             <router-link :to="{name: 'login'}">
-                                <b-button block variant="primary">Log In</b-button>
+                                <b-button block variant="primary">Sign In</b-button>
                             </router-link>
                         </b-col>
 
                         <b-col cols="12">
                             <router-link :to="{name: 'register'}">
-                                <b-button block variant="outline-primary">Register</b-button>
+                                <b-button block variant="outline-primary">Sign Up</b-button>
                             </router-link>
                         </b-col>
                     </b-row>
@@ -44,6 +44,5 @@
     button.btn {
         font-size: 16px;
         padding: 18px 32px;
-        border-radius: 10px;
     }
 </style>

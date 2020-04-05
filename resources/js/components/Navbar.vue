@@ -1,11 +1,14 @@
 <template>
     <b-navbar toggleable="md" type="dark" variant="dark" fixed="top">
+        <b-navbar-brand :to="{ name: 'index' }">
+            <div class="square-icon"></div>
+        </b-navbar-brand>
+
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
 
             <b-navbar-nav>
-                <b-nav-item :to="{ name: 'index' }">Home</b-nav-item>
                 <b-nav-item-dropdown text="Courses" left>
                     <b-dropdown-item :to="{ name: 'coursesIndex' }">View All</b-dropdown-item>
                     <b-dropdown-item :to="{ name: 'createCourse' }">Create</b-dropdown-item>

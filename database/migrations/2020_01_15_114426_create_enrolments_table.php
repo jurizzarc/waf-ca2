@@ -22,8 +22,8 @@ class CreateEnrolmentsTable extends Migration
             $table->bigInteger('lecturer_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('course_id')->references('id')->on('courses');
-            $table->foreign('lecturer_id')->references('id')->on('lecturers');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->foreign('lecturer_id')->references('id')->on('lecturers')->onDelete('cascade');
         });
     }
 
