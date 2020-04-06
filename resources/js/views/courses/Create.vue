@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="body-content">
         <b-row>
             <b-col offset-lg="3" col lg="6">
                 <h1>Add Course</h1>

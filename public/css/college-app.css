@@ -18,17 +18,20 @@ p {
     align-items: center;
 }
 
-a, .btn {
+.body-content {
+    padding-top: 110px;
+}
+
+/* a, .btn {
     -webkit-transition: ease-in-out 0.3s;
     transition: ease-in-out 0.3s;
-}
+} */
 
 a {
     color: #2b376b;
 }
 
 a:hover {
-    text-decoration: none;
     color: #1b2550;
 }
 
@@ -47,6 +50,11 @@ a:hover {
 
 .navbar-dark .navbar-nav .nav-link {
     color: #fff!important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: #fff;
+    color: #161616!important;
 }
 
 .navbar-dark .navbar-nav .nav-link:not(:last-child) {
@@ -78,7 +86,8 @@ a:hover {
 }
 
 .btn-primary:hover {
-    background-color: #1b2550;
+    color: #1b2550;
+    background-color: transparent;
     border-color: #1b2550;
 }
 
@@ -94,6 +103,10 @@ a:hover {
     border-color: #2b376b;
 }
 
+td a:not(:last-child) {
+    margin-right: 5px;
+}
+
 .form-header {
     border-bottom: 1px solid #adadad;
     padding-bottom: 20px;
@@ -103,9 +116,9 @@ form {
     margin-top: 25px;
 }
 
-.form-control {
+.form-control, .custom-select {
     height: 40px;
-    padding: 10px;
+    padding: 6px 10px;
     font-size: 14px;
     color: #161616;
     border: 1px solid #adadad;
@@ -115,7 +128,7 @@ form {
     background-color: transparent;
 }
 
-.form-control:focus {
+.form-control:focus, .custom-select:focus {
     color: #161616;
     border-color: #161616;
     -webkit-box-shadow: none;

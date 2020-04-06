@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
 use App\Course;
+use App\Enrolment;
 
 class CourseController extends Controller
 {
@@ -61,7 +62,10 @@ class CourseController extends Controller
 
     public function show($id)
     {
+        // Retrieve course
         $course = Course::find($id);
+        // Retrieve enrolments
+        $enrolments = Enrolment::where('course_id', $course->id)->with(['course', 'lecturer'])->get();
 
         if ($course === null) {
           $statusMsg = 'Course not found!';
@@ -76,7 +80,7 @@ class CourseController extends Controller
         return response()->json(
           [
               'status' => $statusMsg,
-              'data' => $course
+              'data' => [$course, $enrolments]
           ],
           $statusCode);
     }

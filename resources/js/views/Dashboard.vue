@@ -1,11 +1,11 @@
 <template>
-    <b-container>
+    <div class="body-content">
         <b-row>
             <b-col offset-lg="1" col lg="10">
                 This is the Admin Dashboard.
             </b-col>
         </b-row>
-    </b-container>
+    </div>
 </template>
 
 <script>
@@ -16,9 +16,3 @@
         }
     }
 </script>
-
-<style scoped>
-    .container {
-        padding-top: 80px;
-    }
-</style>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="body-content">
         <b-row>
             <b-col offset-lg="3" col lg="6">
                 <h1>Edit Course</h1>
@@ -114,7 +114,7 @@
                 headers: { Authorization: "Bearer " + token }
             })
             .then(function (response) {
-                app.course = response.data.data;
+                app.course = response.data.data[0];
                 console.log(app.course);
             })
             .catch(function (error) {
@@ -148,7 +148,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>

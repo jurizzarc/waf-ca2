@@ -20,8 +20,8 @@
                 </b-nav-item-dropdown>
 
                 <b-nav-item-dropdown text="Enrolments" left>
-                    <b-dropdown-item to="/">View All</b-dropdown-item>
-                    <b-dropdown-item to="/">Create</b-dropdown-item>
+                    <b-dropdown-item :to="{ name: 'enrolmentsIndex' }">View All</b-dropdown-item>
+                    <b-dropdown-item :to="{ name: 'createEnrolment' }">Create</b-dropdown-item>
                 </b-nav-item-dropdown>
             </b-navbar-nav>
 

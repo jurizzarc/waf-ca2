@@ -16,6 +16,10 @@ import ShowLecturer from './views/lecturers/Show'
 import CreateLecturer from './views/lecturers/Create'
 import EditLecturer from './views/lecturers/Edit'
 
+import EnrolmentsIndex from './views/enrolments/Index'
+import CreateEnrolment from './views/enrolments/Create'
+import EditEnrolment from './views/enrolments/Edit'
+
 Vue.use(Router)
 
 export default new Router({
@@ -84,6 +88,21 @@ export default new Router({
         path: '/dashboard/lecturers/edit/:id',
         name: 'editLecturer',
         component: EditLecturer
+      },
+      {
+        path: '/dashboard/enrolments',
+        name: 'enrolmentsIndex',
+        component: EnrolmentsIndex
+      },
+      {
+        path: '/dashboard/enrolments/create',
+        name: 'createEnrolment',
+        component: CreateEnrolment
+      },
+      {
+        path: '/dashboard/enrolments/edit/:id',
+        name: 'editEnrolment',
+        component: EditEnrolment
       }
     ]
 });

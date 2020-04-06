@@ -1,27 +1,29 @@
 <template>
-    <b-row>
-        <b-col offset-lg="1" col lg="10">
-            <h1>Lecturers</h1>
+    <div class="body-content">
+        <b-row>
+            <b-col offset-lg="1" col lg="10">
+                <h1>Lecturers</h1>
 
-            <b-table-simple responsive>
-                <b-tr>
-                    <b-th>Name</b-th>
-                    <b-th>E-mail Address</b-th>
-                    <b-th>Actions</b-th>
-                </b-tr>
+                <b-table-simple responsive>
+                    <b-tr>
+                        <b-th>Name</b-th>
+                        <b-th>E-mail Address</b-th>
+                        <b-th>Actions</b-th>
+                    </b-tr>
 
-                <b-tr v-for="lecturer in lecturers" :key="lecturer.id">
-                    <b-td>{{ lecturer.name }}</b-td>
-                    <b-td>{{ lecturer.email }}</b-td>
-                    <b-td>
-                        <router-link :to="`/dashboard/lecturers/${lecturer.id}`">View</router-link>
-                        <router-link :to="`/dashboard/lecturers/edit/${lecturer.id}`">Edit</router-link>
-                        <b-button variant="danger" @click="deleteLecturer(lecturer.id)">Delete</b-button>
-                    </b-td>
-                </b-tr>
-            </b-table-simple>
-        </b-col>
-    </b-row>
+                    <b-tr v-for="lecturer in lecturers" :key="lecturer.id">
+                        <b-td>{{ lecturer.name }}</b-td>
+                        <b-td>{{ lecturer.email }}</b-td>
+                        <b-td>
+                            <router-link :to="`/dashboard/lecturers/${lecturer.id}`">View</router-link>
+                            <router-link :to="`/dashboard/lecturers/edit/${lecturer.id}`">Edit</router-link>
+                            <b-button variant="danger" @click="deleteLecturer(lecturer.id)">Delete</b-button>
+                        </b-td>
+                    </b-tr>
+                </b-table-simple>
+            </b-col>
+        </b-row>
+    </div>
 </template>
 
 <script>
@@ -70,7 +72,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>

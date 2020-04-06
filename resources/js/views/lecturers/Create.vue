@@ -1,82 +1,84 @@
 <template>
-    <b-row>
-        <b-col offset-lg="3" col lg="6">
-            <h1>Add Lecturer</h1>
+    <div class="body-content">
+        <b-row>
+            <b-col offset-lg="3" col lg="6">
+                <h1>Add Lecturer</h1>
 
-            <b-form @submit="addLecturer">
-                <b-form-row>
+                <b-form @submit="addLecturer">
+                    <b-form-row>
 
-                    <b-col cols="12">
-                        <b-form-group
-                            id="name"
-                            label="Name"
-                            label-for="name"
-                        >
-                            <b-form-input
+                        <b-col cols="12">
+                            <b-form-group
                                 id="name"
-                                type="text"
-                                v-model="form.name"
-                                required
+                                label="Name"
+                                label-for="name"
                             >
-                            </b-form-input>
-                        </b-form-group>
-                    </b-col>
+                                <b-form-input
+                                    id="name"
+                                    type="text"
+                                    v-model="form.name"
+                                    required
+                                >
+                                </b-form-input>
+                            </b-form-group>
+                        </b-col>
 
-                    <b-col cols="12">
-                        <b-form-group
-                            id="address"
-                            label="Address"
-                            label-for="address"
-                        >
-                            <b-form-input
+                        <b-col cols="12">
+                            <b-form-group
                                 id="address"
-                                type="text"
-                                v-model="form.address"
-                                required
+                                label="Address"
+                                label-for="address"
                             >
-                            </b-form-input>
-                        </b-form-group>
-                    </b-col>
+                                <b-form-input
+                                    id="address"
+                                    type="text"
+                                    v-model="form.address"
+                                    required
+                                >
+                                </b-form-input>
+                            </b-form-group>
+                        </b-col>
 
-                    <b-col col lg="6" sm="12">
-                        <b-form-group
-                            id="email"
-                            label="E-mail Address"
-                            label-for="email">
-                            <b-form-input
+                        <b-col col lg="6" sm="12">
+                            <b-form-group
                                 id="email"
-                                type="email"
-                                v-model="form.email"
-                                required
-                            >
-                            </b-form-input>
-                        </b-form-group>
-                    </b-col>
+                                label="E-mail Address"
+                                label-for="email">
+                                <b-form-input
+                                    id="email"
+                                    type="email"
+                                    v-model="form.email"
+                                    required
+                                >
+                                </b-form-input>
+                            </b-form-group>
+                        </b-col>
 
-                    <b-col col lg="6" sm="12">
-                        <b-form-group
-                            id="phone"
-                            label="Phone"
-                            label-for="phone">
-                            <b-form-input
+                        <b-col col lg="6" sm="12">
+                            <b-form-group
                                 id="phone"
-                                type="text"
-                                v-model="form.phone"
-                                required
-                            >
-                            </b-form-input>
-                        </b-form-group>
-                    </b-col>
+                                label="Phone"
+                                label-for="phone">
+                                <b-form-input
+                                    id="phone"
+                                    type="text"
+                                    v-model="form.phone"
+                                    required
+                                >
+                                </b-form-input>
+                            </b-form-group>
+                        </b-col>
 
-                    <b-button type="submit" variant="primary">Add Lecturer</b-button>
-                    <router-link :to="{name: 'lecturersIndex'}">
-                        <b-button variant="secondary">Cancel</b-button>
-                    </router-link>
+                        <b-button type="submit" variant="primary">Add Lecturer</b-button>
+                        <router-link :to="{name: 'lecturersIndex'}">
+                            <b-button variant="secondary">Cancel</b-button>
+                        </router-link>
 
-                </b-form-row>
-            </b-form>
-        </b-col>
-    </b-row>
+                    </b-form-row>
+                </b-form>
+            </b-col>
+        </b-row>
+    </div>
 </template>
 
 <script>
