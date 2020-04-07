@@ -41,9 +41,14 @@
 
                     <b-tr v-for="enrolment in enrolments" :key="enrolment.id">
                         <b-td>{{ enrolment.course.title }}</b-td>
-                        <b-td>{{ enrolment.date }}</b-td>
-                        <b-td>{{ enrolment.time }}</b-td>
-                        <b-td>{{ enrolment.status }}</b-td>
+                        <b-td>{{ enrolment.date | dateParse('YYYY.MM.DD') | dateFormat('DD.MM.YYYY') }}</b-td>
+                        <b-td>{{ enrolment.time | dateParse('HH.mm.ss') | dateFormat('HH:mm') }}</b-td>
+                        <b-td>
+                            <h6 class="status" v-if="enrolment.status == 'career_break'">Career Break</h6>
+                            <h6 class="status" v-else>
+                                {{ enrolment.status }}
+                            </h6>
+                        </b-td>
                     </b-tr>
                 </b-table-simple>
 

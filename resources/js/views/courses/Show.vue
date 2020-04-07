@@ -37,7 +37,12 @@
 
                     <b-tr v-for="enrolment in enrolments" :key="enrolment.id">
                         <b-td>{{ enrolment.lecturer.name }}</b-td>
-                        <b-td>{{ enrolment.status }}</b-td>
+                        <b-td>
+                            <h6 class="status" v-if="enrolment.status == 'career_break'">Career Break</h6>
+                            <h6 class="status" v-else>
+                                {{ enrolment.status }}
+                            </h6>
+                        </b-td>
                     </b-tr>
                 </b-table-simple>
 
