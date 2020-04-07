@@ -2,7 +2,9 @@
     <div class="body-content">
         <b-row>
             <b-col offset-lg="3" col lg="6">
-                <h1>Edit Lecturer</h1>
+                <div class="form-header">
+                    <h1>Edit Lecturer</h1>
+                </div>
 
                 <b-form @submit="editLecturer">
                     <b-form-row>
@@ -69,10 +71,12 @@
                             </b-form-group>
                         </b-col>
 
-                        <b-button type="submit" variant="primary">Edit Lecturer</b-button>
-                        <router-link :to="{name: 'lecturersIndex'}">
-                            <b-button variant="secondary">Cancel</b-button>
-                        </router-link>
+                        <b-col>
+                            <b-button type="submit" variant="primary">Edit Lecturer</b-button>
+                            <router-link :to="{name: 'lecturersIndex'}">
+                                <b-button variant="light">Cancel</b-button>
+                            </router-link>
+                        </b-col>
 
                     </b-form-row>
                 </b-form>

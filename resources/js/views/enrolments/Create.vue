@@ -2,7 +2,9 @@
     <div class="body-content">
         <b-row>
             <b-col offset-lg="4" col lg="4">
-                <h1>Add Enrolment</h1>
+                <div class="form-header">
+                    <h1>Add Enrolment</h1>
+                </div>
 
                 <b-form @submit="addEnrolment">
                     <b-form-row>
@@ -97,7 +99,12 @@
                             </b-form-group>
                         </b-col> 
 
-                        <b-button type="submit" variant="primary">Add Enrolment</b-button>
+                        <b-col>
+                            <b-button type="submit" variant="primary">Add Enrolment</b-button>
+                            <router-link :to="{ name: 'enrolmentsIndex' }">
+                                <b-button variant="light">Cancel</b-button>
+                            </router-link>
+                        </b-col>
 
                     </b-form-row>
                 </b-form>

@@ -95,8 +95,4 @@
     .form-header h1 {
         margin-bottom: 5px;
     }
-
-    button.btn {
-        padding: 10px 20px;
-    }
 </style>

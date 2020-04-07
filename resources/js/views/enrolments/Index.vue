@@ -19,10 +19,19 @@
                         <b-td>{{ enrolment.lecturer.name }}</b-td>
                         <b-td>{{ enrolment.date }}</b-td>
                         <b-td>{{ enrolment.time }}</b-td>
-                        <b-td>{{ enrolment.status }}</b-td>
                         <b-td>
-                            <router-link :to="`/dashboard/enrolments/edit/${enrolment.id}`">Edit</router-link>
-                            <b-button variant="danger" @click="deleteEnrolment(enrolment.id)">Delete</b-button>
+                            <h6 class="status" v-if="enrolment.status == 'career_break'">Career Break</h6>
+                            <h6 class="status" v-else>{{ enrolment.status }}</h6>
+                        </b-td>
+                        <b-td>
+                            <router-link :to="`/dashboard/enrolments/edit/${enrolment.id}`">
+                                <b-button variant="outline-secondary">
+                                    <jam-pencil/>Edit
+                                </b-button>
+                            </router-link>
+                            <b-button variant="outline-secondary" @click="deleteEnrolment(enrolment.id)">
+                                <jam-trash-alt/>Delete
+                            </b-button>   
                         </b-td>
                     </b-tr>
                 </b-table-simple>

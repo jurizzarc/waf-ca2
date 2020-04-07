@@ -1,53 +1,47 @@
 <template>
     <div class="body-content">
         <b-row>
-            <b-col offset-lg="2" col lg="8">
-                <h1>View Course</h1>
+            <b-col col lg="6">
+                <h2>{{ course.title }}</h2>
+                
+                <b-list-group horizontal>
+                    <b-list-group-item>{{ course.code }}</b-list-group-item>
+                    <b-list-group-item>Level {{ course.level }}</b-list-group-item>
+                    <b-list-group-item>{{ course.points }} Points</b-list-group-item>
+                </b-list-group>
 
-                <b-table-simple responsive>
-                    <b-tr>
-                        <b-th>Title</b-th>
-                        <b-td>{{ course.title }}</b-td>
-                    </b-tr>
+                <p class="description">
+                    {{ course.description }}
+                </p>
 
-                    <b-tr>
-                        <b-th>Code</b-th>
-                        <b-td>{{ course.code }}</b-td>
-                    </b-tr>
+                <div class="item-buttons">
+                    <router-link :to="`/dashboard/courses/edit/${course.id}`">
+                        <b-button variant="primary">
+                            Edit Course
+                        </b-button>
+                    </router-link>
+                    <b-button variant="light" @click="deleteCourse(course.id)">
+                        Delete Course
+                    </b-button>
+                </div>
+            </b-col>
 
-                    <b-tr>
-                        <b-th>Description</b-th>
-                        <b-td>{{ course.description }}</b-td>
-                    </b-tr>
+            <b-col offset-lg="1" col lg="5">
+                <h2>Enrolments</h2>
 
-                    <b-tr>
-                        <b-th>Level</b-th>
-                        <b-td>{{ course.level }}</b-td>
-                    </b-tr>
-
-                    <b-tr>
-                        <b-th>Points</b-th>
-                        <b-td>{{ course.points }}</b-td>
-                    </b-tr>
-                </b-table-simple>
-
-                <h3>Enrolments</h3>
-
-                <b-table-simple responsive>
+                <b-table-simple responsive v-if="enrolments.length > 0">
                     <b-tr>
                         <b-th>Lecturer</b-th>
-                        <b-th>Date</b-th>
-                        <b-th>Time</b-th>
                         <b-th>Status</b-th>
                     </b-tr>
 
                     <b-tr v-for="enrolment in enrolments" :key="enrolment.id">
                         <b-td>{{ enrolment.lecturer.name }}</b-td>
-                        <b-td>{{ enrolment.date }}</b-td>
-                        <b-td>{{ enrolment.time }}</b-td>
                         <b-td>{{ enrolment.status }}</b-td>
                     </b-tr>
                 </b-table-simple>
+
+                <p class="array-results" v-else>No lecturer is enrolled in this course.</p>
             </b-col>
         </b-row>
     </div>
@@ -79,6 +73,19 @@
             .catch(function (error) {
                 console.log(error);
             });
+        },
+        methods: {
+            deleteCourse(id) {
+                let app = this;
+                let token = localStorage.getItem('token');
+                axios.delete(`/api/courses/${id}`, {
+                    headers: { Authorization: "Bearer " + token }
+                })
+                .then(function (response) {
+                    console.log(response);
+                    app.$router.push('/dashboard/courses');
+                });
+            }
         }
     }
 </script>

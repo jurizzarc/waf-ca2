@@ -15,9 +15,19 @@
                         <b-td>{{ lecturer.name }}</b-td>
                         <b-td>{{ lecturer.email }}</b-td>
                         <b-td>
-                            <router-link :to="`/dashboard/lecturers/${lecturer.id}`">View</router-link>
-                            <router-link :to="`/dashboard/lecturers/edit/${lecturer.id}`">Edit</router-link>
-                            <b-button variant="danger" @click="deleteLecturer(lecturer.id)">Delete</b-button>
+                            <router-link :to="`/dashboard/lecturers/${lecturer.id}`">
+                                <b-button variant="outline-secondary">
+                                    <jam-eye/>View
+                                </b-button>
+                            </router-link>
+                            <router-link :to="`/dashboard/lecturers/edit/${lecturer.id}`">
+                                <b-button variant="outline-secondary">
+                                    <jam-pencil/>Edit
+                                </b-button>
+                            </router-link>
+                            <b-button variant="outline-secondary" @click="deleteLecturer(lecturer.id)">
+                                <jam-trash-alt/>Delete
+                            </b-button>
                         </b-td>
                     </b-tr>
                 </b-table-simple>

@@ -19,15 +19,19 @@
                         <b-td>{{ course.points }}</b-td>
                         <b-td>{{ course.level }}</b-td>
                         <b-td>
-                            <!-- <router-link :to="`/dashboard/courses/${course.id}`">View</router-link>
-                            <router-link :to="`/dashboard/courses/edit/${course.id}`">Edit</router-link> -->
                             <router-link :to="`/dashboard/courses/${course.id}`">
-                                <b-button variant="secondary">View</b-button>
+                                <b-button variant="outline-secondary">
+                                    <jam-eye/>View
+                                </b-button>
                             </router-link>
                             <router-link :to="`/dashboard/courses/edit/${course.id}`">
-                                <b-button variant="secondary">Edit</b-button>
+                                <b-button variant="outline-secondary">
+                                    <jam-pencil/>Edit
+                                </b-button>
                             </router-link>
-                            <b-button variant="secondary" @click="deleteCourse(course.id)">Delete</b-button>
+                            <b-button variant="outline-secondary" @click="deleteCourse(course.id)">
+                                <jam-trash-alt/>Delete
+                            </b-button>
                         </b-td>
                     </b-tr>
                 </b-table-simple>

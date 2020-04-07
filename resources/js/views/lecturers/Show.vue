@@ -1,34 +1,37 @@
 <template>
     <div class="body-content">
         <b-row>
-            <b-col offset-lg="2" col lg="8">
-                <h1>View Lecturer</h1>
+            <b-col col lg="4">
+                <h2>{{ lecturer.name }}</h2>
 
-                <b-table-simple responsive>
-                    <b-tr>
-                        <b-th>Name</b-th>
-                        <b-td>{{ lecturer.name }}</b-td>
-                    </b-tr>
+                <b-list-group>
+                    <b-list-group-item>
+                        <jam-pin-alt/>{{ lecturer.address }}
+                    </b-list-group-item>
+                    <b-list-group-item>
+                        <jam-inbox/>{{ lecturer.email }}
+                    </b-list-group-item>
+                    <b-list-group-item>
+                        <jam-phone/>{{ lecturer.phone }}
+                    </b-list-group-item>
+                </b-list-group>
 
-                    <b-tr>
-                        <b-th>Address</b-th>
-                        <b-td>{{ lecturer.address }}</b-td>
-                    </b-tr>
+                <div class="item-buttons">
+                    <router-link :to="`/dashboard/lecturers/edit/${lecturer.id}`">
+                        <b-button variant="primary">
+                            Edit Lecturer
+                        </b-button>
+                    </router-link>
+                    <b-button variant="light" @click="deleteLecturer(lecturer.id)">
+                        Delete Lecturer
+                    </b-button>
+                </div>
+            </b-col>
 
-                    <b-tr>
-                        <b-th>E-mail Address</b-th>
-                        <b-td>{{ lecturer.email }}</b-td>
-                    </b-tr>
-
-                    <b-tr>
-                        <b-th>Phone</b-th>
-                        <b-td>{{ lecturer.phone }}</b-td>
-                    </b-tr>
-                </b-table-simple>
-
+            <b-col offset-lg="1" col lg="7">
                 <h3>Enrolments</h3>
 
-                <b-table-simple responsive>
+                <b-table-simple responsive v-if="enrolments.length > 0">
                     <b-tr>
                         <b-th>Course</b-th>
                         <b-th>Date</b-th>
@@ -43,6 +46,8 @@
                         <b-td>{{ enrolment.status }}</b-td>
                     </b-tr>
                 </b-table-simple>
+
+                <p class="array-results" v-else>This lecturer is not enrolled in any course.</p>
             </b-col>
         </b-row>
     </div>
@@ -72,6 +77,25 @@
             .catch(function (error) {
                 console.log(error)
             });
+        },
+        methods: {
+            deleteLecturer(id) {
+                let app = this;
+                let token = localStorage.getItem('token');
+                axios.delete(`/api/lecturers/${id}`, {
+                    headers: { Authorization: "Bearer " + token }
+                })
+                .then(function (response) {
+                    console.log(response);
+                    app.$router.push('/dashboard/lecturers');
+                });
+            }
         }
     }
 </script>
+
+<style scoped>
+    .list-group {
+        margin-top: 15px;
+    }
+</style>

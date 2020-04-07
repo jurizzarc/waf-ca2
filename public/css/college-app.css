@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .body-content {
-    padding-top: 100px;
+    padding: 100px 0px;
 }
 
 /* a, .btn {
@@ -70,6 +70,18 @@ a:hover {
     border-radius: 5px;
 }
 
+.btn-light {
+    color: #adadad;
+    background-color: transparent;
+    border-color: #adadad;
+}
+
+.btn-light:hover {
+    color: #000;
+    background-color: transparent;
+    border-color: #adadad;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #2b376b;
@@ -80,20 +92,6 @@ a:hover {
     color: #1b2550;
     background-color: transparent;
     border-color: #1b2550;
-}
-
-.btn-secondary {
-    color: #fff;
-    background-color: #161616;
-    border-color: #161616;
-    font-size: 14px;
-    font-weight: 400!important;
-}
-
-.btn-secondary:hover {
-    color: #161616;
-    background-color: transparent;
-    border-color: #161616;
 }
 
 .btn-outline-primary {
@@ -108,7 +106,21 @@ a:hover {
     border-color: #2b376b;
 }
 
-td a:not(:last-child) {
+.btn-outline-secondary {
+    color: #161616;
+    background-color: transparent;
+    border-color: #161616;
+    font-size: 14px;
+}
+
+.btn-outline-secondary:hover {
+    color: #161616;
+    background-color: transparent;
+    border-color: #161616;
+    text-decoration: underline;
+}
+
+td a {
     margin-right: 5px;
 }
 
@@ -140,6 +152,11 @@ form {
     box-shadow: none;
 }
 
+textarea {
+    height: 150px!important;
+    resize: none!important;
+}
+
 label {
     margin-bottom: 5px;
     color: #000;
@@ -149,12 +166,20 @@ label {
     margin-bottom: 20px;
 }
 
-form .btn {
+form button.btn {
     margin-top: 15px;
+    margin-right: 10px;
+    padding: 10px 20px;
+}
+
+.item-buttons button.btn {
+    margin-top: 40px;
+    margin-right: 15px;
+    padding: 10px 20px;
 }
 
 table.table {
-    margin: 20px 0px;
+    margin-top: 20px;
 }
 
 .table th {
@@ -167,4 +192,58 @@ table.table {
 
 .table th, .table td {
     padding: 15px 10px;
+}
+
+.table td .jam {
+    fill: #161616;
+    height: 18px;
+    line-height: 36px;
+    white-space: nowrap;
+}
+
+p.description {
+    margin-top: 20px;
+}
+
+.list-group-horizontal, .array-results {
+    margin-top: 5px;
+}
+
+.list-group-horizontal .list-group-item {
+    padding: 0px;
+    border: none!important;
+    color: #6c6c6c;
+    text-transform: uppercase;
+}
+
+.list-group-horizontal .list-group-item:not(:last-child)::after {
+    content: '\2022';
+    margin: 0px 6px;
+}
+
+.list-group .list-group-item {
+    padding: 0px;
+    border: none!important;
+}
+
+.list-group .list-group-item:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.list-group .list-group-item .jam {
+    height: 18px;
+    line-height: 24px;
+    white-space: nowrap;
+    margin-right: 4px;
+}
+
+h6.status {
+    background-color: #2b376b;
+    color: #fff;
+    display: inline-block;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 20px;
 }
