@@ -93,7 +93,7 @@
 <script>
     export default {
         name: 'createCourse',
-        components: {},
+        // components: {},
         data() {
             return {
                 form: {

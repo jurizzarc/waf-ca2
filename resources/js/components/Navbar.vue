@@ -1,14 +1,15 @@
 <template>
     <b-navbar toggleable="md" type="dark" variant="dark" fixed="top">
         <b-navbar-brand :to="{ name: 'index' }">
-            <div class="square-icon"></div>
+            <!-- <div class="square-icon"></div> -->
+            <h4>College App</h4>
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
 
-            <b-navbar-nav>
+            <b-navbar-nav class="ml-auto">
                 <b-nav-item-dropdown text="Courses" left>
                     <b-dropdown-item :to="{ name: 'coursesIndex' }">View All</b-dropdown-item>
                     <b-dropdown-item :to="{ name: 'createCourse' }">Create</b-dropdown-item>
@@ -23,9 +24,7 @@
                     <b-dropdown-item :to="{ name: 'enrolmentsIndex' }">View All</b-dropdown-item>
                     <b-dropdown-item :to="{ name: 'createEnrolment' }">Create</b-dropdown-item>
                 </b-nav-item-dropdown>
-            </b-navbar-nav>
 
-            <b-navbar-nav class="ml-auto">
                 <b-nav-item @click="logout">Log Out</b-nav-item>
             </b-navbar-nav>
 
@@ -36,10 +35,6 @@
 <script>
     export default {
         name: 'navbar',
-        components: {},
-        data() {
-            return {}
-        },
         methods: {
             logout(evt) {
                 evt.preventDefault();
@@ -53,5 +48,8 @@
 </script>
 
 <style scoped>
-
+    img {
+        height: 75px;
+        width: auto;
+    }
 </style>

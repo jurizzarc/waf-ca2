@@ -84,7 +84,7 @@
 <script>
     export default {
         name: 'createLecturer',
-        components: {},
+        // components: {},
         data() {
             return {
                 form: {

@@ -13,13 +13,6 @@
 
     export default {
         name: 'app',
-        components: { Navbar },
-        data() {
-            return {}
-        }
+        components: { Navbar }
     }
 </script>
-
-<style>
-    
-</style>

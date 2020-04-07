@@ -84,7 +84,7 @@
 <script>
     export default {
         name: 'editLecturer',
-        components: {},
+        // components: {},
         data() {
             return {
                 lecturer: {},
@@ -98,21 +98,24 @@
                 this.loggedIn = false;
             }
 
-            let app = this;
-            let lecturerId = app.$route.params.id;
-            let token = localStorage.getItem('token');
-            axios.get(`/api/lecturers/${lecturerId}`, {
-                headers: { Authorization: "Bearer " + token }
-            })
-            .then(function (response) {
-                app.lecturer = response.data.data[0];
-                console.log(app.lecturer);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+            this.getLecturer();
         },
         methods: {
+            getLecturer() {
+                let app = this;
+                let lecturerId = app.$route.params.id;
+                let token = localStorage.getItem('token');
+                axios.get(`/api/lecturers/${lecturerId}`, {
+                    headers: { Authorization: "Bearer " + token }
+                })
+                .then(function (response) {
+                    app.lecturer = response.data.data[0];
+                    console.log(app.lecturer);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            },
             editLecturer(evt) {
                 evt.preventDefault();
 
