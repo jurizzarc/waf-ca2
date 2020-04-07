@@ -36,4 +36,8 @@ And then register in app.js
 
 Register vue-router in router.js
 
+Then run
+- `npm run dev`
+- `npm run watch`
+
 Set your own remote git repo and push your commits
