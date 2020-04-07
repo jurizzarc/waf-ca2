@@ -8,7 +8,7 @@ html, body {
     font-family: 'Poppins', sans-serif;
 }
 
-p {
+h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 0px;
 }
 
@@ -19,7 +19,7 @@ p {
 }
 
 .body-content {
-    padding-top: 110px;
+    padding-top: 100px;
 }
 
 /* a, .btn {
@@ -35,35 +35,26 @@ a:hover {
     color: #1b2550;
 }
 
-.bg-dark {
-    background-color: #161616!important;
-}
-
 .navbar {
-    padding: 0px 12px 0px 0px!important;
+    padding: 0px 20px!important;
     height: 60px!important;
+    border-bottom: 1px solid #adadad;
+    background-color: #fff;
 }
 
-.navbar-expand-md .navbar-nav .nav-link {
+.navbar-nav .nav-link {
     padding: 10px!important;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: #fff!important;
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-    background-color: #fff;
+.navbar-nav .nav-link {
     color: #161616!important;
 }
 
-.navbar-dark .navbar-nav .nav-link:not(:last-child) {
-    margin-right: 10px;
+.navbar-nav .nav-link span:hover {
+    border-bottom: 2px solid #2b376b;
 }
 
-.navbar-brand {
-    width: 60px;
-    padding: 0px!important;
+.navbar-nav .nav-link:not(:last-child) {
     margin-right: 12px;
 }
 
@@ -89,6 +80,20 @@ a:hover {
     color: #1b2550;
     background-color: transparent;
     border-color: #1b2550;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #161616;
+    border-color: #161616;
+    font-size: 14px;
+    font-weight: 400!important;
+}
+
+.btn-secondary:hover {
+    color: #161616;
+    background-color: transparent;
+    border-color: #161616;
 }
 
 .btn-outline-primary {
@@ -146,4 +151,20 @@ label {
 
 form .btn {
     margin-top: 15px;
+}
+
+table.table {
+    margin: 20px 0px;
+}
+
+.table th {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    border-top: 1px solid #adadad;
+    border-bottom: 2px solid #000;
+}
+
+.table th, .table td {
+    padding: 15px 10px;
 }

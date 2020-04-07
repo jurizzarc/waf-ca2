@@ -1,7 +1,6 @@
 <template>
-    <b-navbar toggleable="md" type="dark" variant="dark" fixed="top">
+    <b-navbar toggleable="md" fixed="top">
         <b-navbar-brand :to="{ name: 'index' }">
-            <!-- <div class="square-icon"></div> -->
             <h4>College App</h4>
         </b-navbar-brand>
 
@@ -25,7 +24,9 @@
                     <b-dropdown-item :to="{ name: 'createEnrolment' }">Create</b-dropdown-item>
                 </b-nav-item-dropdown>
 
-                <b-nav-item @click="logout">Log Out</b-nav-item>
+                <b-nav-item @click="logout">
+                    <span>Sign Out</span>
+                </b-nav-item>
             </b-navbar-nav>
 
         </b-collapse>

@@ -1996,6 +1996,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'navbar',
   methods: {
@@ -2589,6 +2590,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -77806,9 +77813,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "b-navbar",
-    {
-      attrs: { toggleable: "md", type: "dark", variant: "dark", fixed: "top" }
-    },
+    { attrs: { toggleable: "md", fixed: "top" } },
     [
       _c("b-navbar-brand", { attrs: { to: { name: "index" } } }, [
         _c("h4", [_vm._v("College App")])
@@ -77882,7 +77887,7 @@ var render = function() {
               ),
               _vm._v(" "),
               _c("b-nav-item", { on: { click: _vm.logout } }, [
-                _vm._v("Log Out")
+                _c("span", [_vm._v("Sign Out")])
               ])
             ],
             1
@@ -78976,7 +78981,14 @@ var render = function() {
                               {
                                 attrs: { to: "/dashboard/courses/" + course.id }
                               },
-                              [_vm._v("View")]
+                              [
+                                _c(
+                                  "b-button",
+                                  { attrs: { variant: "secondary" } },
+                                  [_vm._v("View")]
+                                )
+                              ],
+                              1
                             ),
                             _vm._v(" "),
                             _c(
@@ -78986,13 +78998,20 @@ var render = function() {
                                   to: "/dashboard/courses/edit/" + course.id
                                 }
                               },
-                              [_vm._v("Edit")]
+                              [
+                                _c(
+                                  "b-button",
+                                  { attrs: { variant: "secondary" } },
+                                  [_vm._v("Edit")]
+                                )
+                              ],
+                              1
                             ),
                             _vm._v(" "),
                             _c(
                               "b-button",
                               {
-                                attrs: { variant: "danger" },
+                                attrs: { variant: "secondary" },
                                 on: {
                                   click: function($event) {
                                     return _vm.deleteCourse(course.id)
