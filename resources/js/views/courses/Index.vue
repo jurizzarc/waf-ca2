@@ -45,14 +45,18 @@
         name: 'coursesIndex',
         data() {
             return {
-                courses: []
+                courses: [],
+                loggedIn: false
             }
         },
         mounted() {
             if (localStorage.getItem('token') !== null) {
-                console.log("User logged in.");
+                // console.log("User logged in.");
+                this.loggedIn = true;
             } else {
-                console.log("User not logged in.");
+                // console.log("User not logged in.");
+                this.loggedIn = false;
+                this.$router.push('/');
             }
             this.getCourses();
         },

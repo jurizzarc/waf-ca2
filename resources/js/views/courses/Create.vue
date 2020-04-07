@@ -100,7 +100,6 @@
 <script>
     export default {
         name: 'createCourse',
-        // components: {},
         data() {
             return {
                 form: {
@@ -111,7 +110,7 @@
                     level: ''
                 },
                 loggedIn: false,
-                errors: []
+                // errors: []
             }
         },
         computed: {

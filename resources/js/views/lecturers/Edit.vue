@@ -100,6 +100,7 @@
                 this.loggedIn = true;
             } else {
                 this.loggedIn = false;
+                this.$router.push('/');
             }
 
             this.getLecturer();

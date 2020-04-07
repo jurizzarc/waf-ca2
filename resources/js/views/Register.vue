@@ -4,7 +4,7 @@
             <b-row>
                 <b-col offset-lg="4" col lg="4">
                     <div class="form-header">
-                        <h1>Register</h1>
+                        <h1>Sign Up</h1>
                         <p>Already have an account? <router-link :to="{name: 'login'}">Sign In</router-link></p> 
                     </div>
 
@@ -56,23 +56,8 @@
                                 </b-form-group>
                             </b-col>
 
-                            <b-col cols="12">
-                                <b-form-group
-                                id="confirm-password"
-                                label="Confirm Password"
-                                label-for="confirm-password"
-                                >
-                                    <b-form-input
-                                    id="confirm-password"
-                                    v-model="confirmPassword"
-                                    type="password"
-                                    required
-                                    ></b-form-input>
-                                </b-form-group>
-                            </b-col>
-
                             <b-col>
-                                <b-button type="submit" variant="primary">Register</b-button>
+                                <b-button type="submit" variant="primary">Sign Up</b-button>
                             </b-col>
 
                         </b-form-row>
@@ -91,8 +76,7 @@
             return {
                 name: '',
                 email: '',
-                password: '',
-                confirmPassword: ''
+                password: ''
             }
         },
         methods: {
@@ -102,15 +86,13 @@
                 axios.post('/api/register', {
                     name: app.name,
                     email: app.email,
-                    password: app.password,
-                    confirmPassword: app.confirmPassword
+                    password: app.password
                 })
                 .then(function(response) {
                     console.log(response.data);
                     app.name = response.data.name;
                     app.email = response.data.email;
                     localStorage.setItem('token', response.data.token);
-                    // Redirect to this url
                     app.$router.push('/dashboard');
                 })
                 .catch(function(error) {

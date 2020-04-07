@@ -58,10 +58,18 @@
         data() {
             return {
                 course: {},
-                enrolments: []
+                enrolments: [],
+                loggedIn: false
             }
         },
         mounted() {
+            if (localStorage.getItem('token')) {
+                this.loggedIn = true;
+            } else {
+                this.loggedIn = false;
+                this.$router.push('/');
+            }
+
             let app = this;
             let courseId = app.$route.params.id;
             // console.log(courseId);

@@ -39,10 +39,20 @@
         methods: {
             logout(evt) {
                 evt.preventDefault();
+                let app = this;
+                let token = localStorage.getItem('token');
+                axios.get('/api/logout', {
+                    headers: { Authorization: "Bearer " + token }
+                })
+                .then(function (response) {
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+                app.$router.push('/');
                 localStorage.removeItem('token');
-                console.log("Logged out");
-                // Redirect to this url
-                this.$router.push('/');
+                console.log("User logged out");
             }
         }
     }

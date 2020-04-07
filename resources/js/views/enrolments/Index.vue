@@ -48,14 +48,16 @@
         name: 'enrolmentsIndex',
         data() {
             return {
-                enrolments: []
+                enrolments: [],
+                loggedIn: false
             }
         },
         mounted() {
             if (localStorage.getItem('token') !== null) {
-                console.log("User logged in.");
+                this.loggedIn = true;
             } else {
-                console.log("User not logged in.");
+                this.loggedIn = false;
+                this.$router.push('/');
             }
             this.getEnrolments();
         },

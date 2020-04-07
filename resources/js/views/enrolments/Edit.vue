@@ -130,6 +130,7 @@
                     { id: '3', value: 'associate', text: 'Associate' },
                     { id: '4', value: 'career_break', text: 'Career Break' }
                 ],
+                loggedIn: false
             }
         },
         created() {
@@ -137,6 +138,7 @@
                 this.loggedIn = true;
             } else {
                 this.loggedIn = false;
+                this.$router.push('/');
             }
 
             this.getEnrolment();

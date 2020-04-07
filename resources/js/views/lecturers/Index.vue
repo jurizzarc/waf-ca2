@@ -41,14 +41,16 @@
         name: 'lecturersIndex',
         data() {
             return {
-                lecturers: []
+                lecturers: [],
+                loggedIn: false
             }
         },
         mounted() {
             if (localStorage.getItem('token')) {
-                console.log("User logged in.");
+                this.loggedIn = true;
             } else {
-                console.log("User not logged in.");
+                this.loggedIn = false;
+                this.$router.push('/');
             }
 
             this.getLecturers();

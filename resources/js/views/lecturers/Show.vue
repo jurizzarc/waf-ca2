@@ -64,10 +64,18 @@
         data() {
             return {
                 lecturer: {},
-                enrolments: []
+                enrolments: [],
+                loggedIn: false
             }
         },
         mounted() {
+            if (localStorage.getItem('token')) {
+                this.loggedIn = true;
+            } else {
+                this.loggedIn = false;
+                this.$router.push('/');
+            }
+
             let app = this;
             let lecturerId = app.$route.params.id;
             let token = localStorage.getItem('token');
