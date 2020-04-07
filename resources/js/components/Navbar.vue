@@ -50,7 +50,7 @@
                 .catch(function (error) {
                     console.log(error);
                 });
-                app.$router.push('/');
+                app.$router.push('/'); // Take the user to '/'
                 localStorage.removeItem('token');
                 console.log("User logged out");
             }

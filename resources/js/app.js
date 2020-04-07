@@ -1,10 +1,10 @@
 require('./bootstrap');
 import Vue from 'vue'
 import App from './App.vue'
-import BootstrapVue from 'bootstrap-vue'
-import VueJamIcons from 'vue-jam-icons'
-import VueFilterDateFormat from 'vue-filter-date-format'
-import VueFilterDateParse from 'vue-filter-date-parse'
+import BootstrapVue from 'bootstrap-vue' // npm install vue bootstrap-vue bootstrap
+import VueJamIcons from 'vue-jam-icons' // npm install jam-icons
+import VueFilterDateFormat from 'vue-filter-date-format' // npm install vue-filter-date-format
+import VueFilterDateParse from 'vue-filter-date-parse' // npm install vue-filter-date-parse
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
 
