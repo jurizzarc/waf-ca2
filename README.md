@@ -25,4 +25,13 @@ And then initialise, add, and commit to Git:
 - `git add .`
 - `git commit -am "Initial commit"`
 
+If dependencies are not found
+- `npm install vue bootstrap-vue bootstrap`
+- `npm install jam-icons`
+- `npm install vue-filter-date-format`
+- `npm install vue-filter-date-parse`
+And then register in app.js
+- `npm install vue-router`
+Register vue-router in router.js
+
 Set your own remote git repo and push your commits
